@@ -1,3 +1,16 @@
+#main-container { /* ID Selector */
+    display: flex;
+    justify-content: center; 
+    padding: 20px;
+    gap: 20px;
+}
+
+.column.middle {
+    flex: 0 1 60%; /* this column takes up 60% of the viewport width */
+    max-width: 800px; 
+    width: 100%;
+}
+
 /* Class Selector - styling posts */
 .post {
     display: flex;
@@ -7,67 +20,33 @@
     border: 1px solid #ccc;
     border-radius: 10px;
     background-color: #f9f9f9;
-    min-height: 300px; /* Ensure all posts have a minimum height */
-    flex-grow: 1; /* Allow posts to grow to fill the space */
+    min-height: 200px; 
+    flex-grow: 1;
+    margin-bottom: 20px;
 }
 
-/* ID Selector - styling a specific container */
-#main-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    gap: 20px;
-}
-
-.column {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.column.left {
-    flex: 1; /* Adjust width */
-}
-
-/* Styling for the middle column */
-.column.middle {
-    flex: 2; /* Middle column takes up more space */
-}
-
-/* Flexbox for side-by-side posts in the middle */
-.middle-row {
-    display: flex;
-    gap: 20px; /* Add space between the two posts */
-}
-
-/* Ensure each post in the side-by-side layout takes up equal width */
-.middle-row .post {
-    flex: 1;
-    height: 90%; /* Allow posts to stretch to the maximum size */
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
+.post-header {
+    display: flex; /* Enable Flexbox */
+    justify-content: space-between; /* Space between logo and text */
+    align-items: center; /* Vertically center the items */
     padding: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Ensure content is spaced out */
+}
+
+.post-header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px; /* Add some space between the image and the text */
 }
 
 
-/* Styling for the right column */
-.column.right {
-    flex: 1; /* Adjust width */
-}
+/* Pseudo-element - */
 
-/* Pseudo-element - adding "::before" content before post text */
-.post p::before {
-    content: "Empty post";
-    font-weight: bold;
-}
 
 /* Descendant Selector - styling paragraph inside .post */
 .post p {
     color: #333;
-    font-size: 16px;
+    font-size: 22px;
 }
 
 /* Child Selector - direct child img inside post */
@@ -80,31 +59,24 @@
 /* Adjacent Sibling Selector - style paragraph that comes directly after a header */
 .post-header + p {
     margin-top: 10px;
-    color: #666;
+    color: #111;
 }
 
 /* General Sibling Selector - styling any paragraph after a header within the same post */
 .post-header ~ p {
-    font-style: italic;
+    font-style: normal;
+    color: #555;
+
 }
 
-.post-footer {
-    text-align: center;
+.post-header {
+    text-align: right;
     padding: 15px;
 }
 
-
-
-/* Pseudo-class for hover effect on navigation links */
-header nav a:hover {
-    color: #007bff; /* Change to desired color on hover */
-}
-
-.nav-link {
-    text-decoration: none;
-    color: black;
-    margin-right: 10px;
-    font-size: 18px; /* Responsive font size */
+.post-footer {
+    text-align: left;
+    padding: 15px;
 }
 
 header {
@@ -113,23 +85,42 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 70px;
+    font-size: 2em;
+}
+
+header nav a + a::before {
+    content: "|";
+    margin-right: 30px;
+    color: black;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: black;
+    margin-right: 10px;
+    font-size: 30px; /* Responsive font size */
 
 }
 
-/* General styles for body and footer */
+/* Pseudo-class for hover effect on navigation links */
+header nav a:hover {
+    color: #007bff; 
+}
+
 body {
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
-    height: 100vh;
     justify-content: space-between;
-    font-size: 1.4em;
-    
+    font-size: 1.2em;
+
 }
 
 header nav {
     display: flex;
     gap: 20px;
+    
 }
 
 header img {
@@ -140,7 +131,71 @@ header img {
 
 
 footer {
-    background-color: #ccc;
+    background-color: #ddd;
     padding: 15px;
     text-align: center;
 } 
+
+
+/* For tablets and smaller devices */
+@media (max-width: 768px) {
+    .column.middle {
+        flex: 0 1 80%; 
+        max-width: 90%; 
+    }
+
+    .post-header img {
+        width: 50px; 
+        height: 50px;
+    }
+
+    body {
+        font-size: 1.2em; 
+    }
+
+    header img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* For phones and very small screens */
+@media (max-width: 480px) {
+    .column.middle {
+        flex: 0 1 100%; 
+        padding: 10px;
+    }
+
+    .post-header img {
+        width: 40px; 
+        height: 40px;
+    }
+
+    .post {
+        padding: 10px;
+    }
+
+    .nav-link {
+        font-size: 1em; 
+    }
+
+    body {
+        font-size: 1em; 
+    }
+
+    footer {
+        padding: 10px;
+    }
+
+    header {
+        padding: 10px;
+        font-size: 20px;
+    }
+
+    header img {
+        width: 35px; 
+        height: 35px;
+    }
+
+
+}
