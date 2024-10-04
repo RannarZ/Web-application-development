@@ -4,10 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Add post</title>
 </head>
 
 <body>
+    <header>
+        <nav>
+            <a href="index.html" class="nav-link">Home</a>
+        </nav>
+        <img src="logo.jpg" alt="Profile">
+    </header>
+
+    <div id="form-container">
+    <form id="new-post-form" action="index.html">
+        <div class="add-post-divs">
+            <label for="post-insertion">Post Body</label>
+            <textArea id="post-insertion"></textArea>
+        </div>
+        <div class="add-post-divs">
+            <label for="choose-file">Select file</label>
+            <input type="button" id="choose-file" value="Choose file"/>
+        </div>
+        <input type="submit" id="create-post" value="Create post"/>  
+    </form>
+</div>
 
 </body>
 

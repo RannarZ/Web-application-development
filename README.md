@@ -1,2 +1,2 @@
 # Web-application-development
-This is homeworks for Oskar, Rannar and Philip
+These are homeworks for Oskar, Rannar and Philip

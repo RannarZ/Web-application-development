@@ -11,7 +11,55 @@
     width: 100%;
 }
 
+#form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#new-post-form {
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    gap: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    min-height: 300px; 
+    max-width: 300px;
+    width: 100%;
+
+}
+
+#new-post-form label {
+    padding-right: 5%;
+}
+
+#create-post {
+    width: 50%;
+    background-color: darkblue;
+    color: white;
+}
+
+#post-insertion {
+    height: 100px;
+}
+
+
 /* Class Selector - styling posts */
+.add-post-divs {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .post {
     display: flex;
     flex-direction: column;
