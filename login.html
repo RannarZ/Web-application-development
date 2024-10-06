@@ -1,14 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh;
+        }
+        header {
+            width: 100%;
+            background-color: #ddd; 
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            font-size: 2em;
+            position: absolute;
+            top: 0; 
+            left: 0; 
+        }
+        
+        
+    </style>
 </head>
-
+<header>
+    <nav>
+        <a href="index.html" class="nav-link">Home</a>
+    </nav>
+    <img src="logo.jpg" alt="Profile">
+</header>
 <body>
 
-</body>
 
+    <div class="container">
+        <div class="login-box">
+            <h2>Welcome Back</h2>
+            <p class="subtitle">Please login to your account</p>
+            <form id="loginForm" action="index.html" method="post">
+                <div class="input-group">
+                    <input type="email" id="email" name="email" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" name="password" required>
+                    <label for="password">Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label class="remember-me">
+                        <input type="checkbox" name="remember">
+                        <span class="checkmark"></span>
+                        Remember me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <p class="signup-link">Don't have an account? <a href="#">Sign up</a></p>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            if (!email || !password) {
+                event.preventDefault();
+                alert('Please fill in both email and password fields.');
+            }
+        });
+    </script>
+</body>
 </html>
