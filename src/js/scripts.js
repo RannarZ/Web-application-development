@@ -84,4 +84,4 @@ function displayPosts(posts) {
 
 
 // Initialize function to load posts on DOM content loaded
-document.addEventListener('DOMContentLoaded', fetchPosts);
+document.addEventListener('DOMContentLoaded', loadPostsFromJson);
