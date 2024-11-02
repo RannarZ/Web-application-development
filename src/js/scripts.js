@@ -1,4 +1,4 @@
-async function fetchPosts() {
+/*/async function fetchPosts() {
     const url = "https://gist.githubusercontent.com/philip120/383f60d2331af5c78ecb8bce1d91acd3/raw/dc6bec734b72c6ef3c293852b624f93e6f7ee83d/.json";
     try {
         const response = await fetch(url);
@@ -18,7 +18,7 @@ async function loadPostsFromJson() {
     } catch (error) {
         console.error('Error loading posts from JSON file:', error);
     }
-}/*/
+}
 
 function displayPosts(posts) {
     const postsContainer = document.getElementById('posts-container');
