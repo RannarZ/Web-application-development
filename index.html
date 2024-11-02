@@ -14,14 +14,18 @@
             <a href="index.html" class="nav-link">Home</a>|
             <a href="addPost.html" class="nav-link">Add Post</a>
         </nav>
-        <img src="logo.jpg" alt="Profile">
+        <img src="logo.jpg" alt="Profile" id="user-picture" onclick="dropDownMenu();">
     </header>
-
     <!-- Main Container for Posts -->
     <div id="main-container">
         <div class="column middle" id="posts-container">
             <!-- Posts will be dynamically loaded here -->
         </div>
+        <div id="dropDownList">
+            <li id="listName">name</li>
+            <li id="listEmail">email</li>
+            <a href="login.html" id="logout">Logout</a>
+          </div>
     </div>
 
     <footer>

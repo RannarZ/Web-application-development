@@ -12,7 +12,7 @@
 /*/
 async function loadPostsFromJson() {
     try {
-        const response = await fetch('posts.json');
+        const response = await fetch('/posts.json');
         const posts = await response.json();
         displayPosts(posts);
     } catch (error) {
@@ -81,6 +81,40 @@ function displayPosts(posts) {
         postsContainer.appendChild(postElement);
     });
 }
+
+function saveEmailAndUsername(event) {
+    //Username comes from the email because in our homework there is not specified where do we get the username.
+    //We presume that email contains a "." between first name and second name.
+    event.preventDefault();
+    const email = document.getElementById("email").value;
+    const usernameList = email.split("@")[0].split(".");
+    const username = usernameList[0] + " " + usernameList[1];
+    sessionStorage.email = email;
+    sessionStorage.username = username;
+    window.location.href = "index.html";
+}
+
+
+function dropDownMenu() {
+    const username = sessionStorage.username;
+    const email = sessionStorage.email;
+    const emailList = document.getElementById("listEmail");
+    const nameList = document.getElementById("listName");
+    emailList.innerText = email;
+    nameList.innerText = username;
+
+    const listNode = document.getElementById("dropDownList");
+    listNode.style.display = "block";
+}
+
+window.addEventListener("click", function(event) {
+    const dropdownList = document.getElementById("dropDownList");
+    const dropdownButton = document.querySelector("#user-picture");
+
+    if (event.target !== dropdownButton && !dropdownList.contains(event.target)) {
+        dropdownList.style.display = "none";
+    }
+});
 
 
 // Initialize function to load posts on DOM content loaded
