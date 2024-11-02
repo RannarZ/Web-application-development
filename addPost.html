@@ -17,19 +17,19 @@
     </header>
 
     <div id="form-container">
-    <form id="new-post-form" action="index.html">
-        <div class="add-post-divs">
-            <label for="post-insertion">Post Body</label>
-            <textArea id="post-insertion"></textArea>
-        </div>
-        <div class="add-post-divs">
-            <label for="choose-file">Select file</label>
-            <input type="button" id="choose-file" value="Choose file"/>
-        </div>
-        <input type="submit" id="create-post" value="Create post"/>  
-    </form>
-</div>
-
+        <form id="new-post-form" onsubmit="createPost(event)">
+            <div class="add-post-divs">
+                <label for="post-insertion">Post Body</label>
+                <textarea id="post-insertion" required></textarea>
+            </div>
+            <div class="add-post-divs">
+                <label for="choose-file">Select file</label>
+                <input type="file" id="choose-file" accept="image/*"/>
+            </div>
+            <input type="submit" id="create-post" value="Create post"/>
+        </form>        
+    </div>
+    <script src="src/js/scripts.js"></script>
 </body>
 
 </html>
