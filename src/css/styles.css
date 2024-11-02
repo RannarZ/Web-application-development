@@ -28,26 +28,18 @@
     display: block;
 }
 
-.post {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.post-image {
+    width: 80%; /* Adjust width to 80% of the container for a balanced look */
+    max-width: 400px; /* Set a maximum width constraint */
+    height: auto;
+    max-height: 400px; /* Optional: limit the height for consistency */
+    border-radius: 8px;
+    object-fit: cover; /* Ensure the image fills the dimensions without distortion */
+    display: block;
+    margin: 10px auto; /* Centers the image */
 }
 
-/* Post header layout */
-.post-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
 
-/* Profile image styling in header */
 .profile-image {
     width: 40px;
     height: 40px;
@@ -55,45 +47,15 @@
     margin-right: 10px;
 }
 
-/* Date styling in header */
 .post-header span {
     color: #666;
     font-size: 0.9em;
     margin-left: auto;
 }
 
-/* Uploaded post image styling (centered in the post) */
-.uploaded-image {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
-/* Content styling */
-.post p {
-    color: #333;
-    font-size: 1.1em;
-    line-height: 1.5em;
-    margin: 10px 0;
-}
-
-/* Post footer for text below image */
-.post-footer {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    padding-top: 10px;
-    font-size: 0.85em;
-    color: #666;
-}
-
-/* Placeholder styling for like button */
 .like-button {
     color: #007bff;
     cursor: pointer;
-    margin-top: 10px;
 }
 
 
