@@ -5,55 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="src/css/styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            width: 100%;
-            background-color: #f0f2f5;
-            margin: 0;
-            overflow-x: hidden;
-        }
-        header {
-            position: absolute;
-            top: 0;
-            width: 100%;
-            height: 70px;
-            background-color: #ddd;
-            display: flex;
-            align-items: center;
-            padding: 15px;
-        }
-        header .nav-link {
-            text-decoration: none;
-            color: black;
-            font-size: 20px;
-            margin-left: 10px; /* Slight margin from the left edge */
-        }
-    </style>
 </head>
+<header>
+    <nav>
+        <a href="index.html" class="nav-link">Home</a>
+    </nav>
+    <img src="logo.jpg" alt="Profile">
+</header>
 <body>
-    <header>
-        <nav>
-            <a href="index.html" class="nav-link">Home</a>
-        </nav>
-        <img src="logo.jpg" alt="Profile">
-    </header>
+    <div class="wrapper">
+        
 
-    <div id="login-page-container" class="container">
-        <h2>Welcome to PostIt</h2>
-        <a href="#" class="create-account">Create an account</a>
-        <p>or</p>
-        <p>Please log in</p>
-        <form id="loginForm" action="index.html" method="post">
-            <input type="email" id="email" name="email" placeholder="Email" required>
-            <input type="password" id="password" name="password" placeholder="Password" required>
-            <button type="submit" class="login-button">Log in</button>
-        </form>
-        <a href="#" class="forgot-password">Forget password</a>
+        <div id="login-page-container">
+            <h2>Welcome to PostIt</h2>
+            <a href="#" class="create-account">Create an account</a>
+            <p>or</p>
+            <p>Please log in</p>
+            <form id="loginForm" action="index.html" method="post">
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <button type="submit" class="login-button">Log in</button>
+            </form>
+            <a href="#" class="forgot-password">Forgot password</a>
+        </div>
     </div>
 </body>
 </html>
