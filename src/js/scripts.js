@@ -10,6 +10,8 @@
 }
 
 /*/
+
+//function that fetches the posts information from json file
 async function loadPostsFromJson() {
     try {
         const response = await fetch('data/posts.json');
@@ -22,51 +24,55 @@ async function loadPostsFromJson() {
 
 function displayPosts(posts) {
     const postsContainer = document.getElementById('posts-container');
-    postsContainer.innerHTML = ''; // Clear any existing content
+    postsContainer.innerHTML = ''; // clear any existing content
 
     posts.forEach(post => {
         const postElement = document.createElement('div');
         postElement.classList.add('post');
 
-        // Post Header with Profile Image and Date
+        // post Header with Profile Image, Date and author name
         const postHeader = document.createElement('div');
         postHeader.classList.add('post-header');
 
         const profileImg = document.createElement('img');
-        profileImg.src = 'logo.jpg'; // Default profile picture
+        profileImg.src = 'logo.jpg'; 
         profileImg.alt = 'User Profile';
-        profileImg.classList.add('profile-image'); // Class for styling profile image
+        profileImg.classList.add('profile-image'); // class for styling profile image
 
-        // Format the date
+        const authorName = document.createElement('span');
+        authorName.textContent = post.author; 
+        authorName.classList.add('post-author');
+
+        // format the date
         const date = new Date(post.createTime);
         const formattedDate = date.toLocaleDateString('en-US', {
             month: 'short', // e.g., "Oct"
-            day: 'numeric', // e.g., "22"
-            year: 'numeric' // e.g., "2022"
+            day: 'numeric', 
+            year: 'numeric' 
         });
 
         const postDate = document.createElement('span');
-        postDate.textContent = formattedDate; // e.g., "Oct 22, 2022"
+        postDate.textContent = formattedDate; // display date as "Oct 22, 2022"
 
-        postHeader.append(profileImg, postDate);
+        postHeader.append(profileImg, authorName, postDate);
         postElement.appendChild(postHeader);
 
-        // Display the uploaded post image if available
+        // display the uploaded post image if available
         if (post.image) {
             const postImage = document.createElement('img');
             postImage.src = post.image;
             postImage.alt = 'Uploaded Post Image';
-            postImage.classList.add('post-image'); // Class for styling post image
+            postImage.classList.add('post-image'); // class for styling post image
             postElement.appendChild(postImage);
         }
 
-        // Post Content Text
+        // post content Text
         const postContent = document.createElement('p');
         postContent.textContent = post.content;
-        postContent.classList.add('post-text'); // Class for styling post text
+        postContent.classList.add('post-text'); // class for styling post text
         postElement.appendChild(postContent);
 
-        // Post Footer with Like Button
+        // post footer with like button
         const postFooter = document.createElement('div');
         postFooter.classList.add('post-footer');
 
@@ -77,7 +83,7 @@ function displayPosts(posts) {
         postFooter.appendChild(likeButton);
         postElement.appendChild(postFooter);
 
-        // Append the post to the main container
+        // append the post to the main container
         postsContainer.appendChild(postElement);
     });
 }

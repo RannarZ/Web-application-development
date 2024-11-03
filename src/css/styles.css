@@ -146,6 +146,13 @@ footer {
     margin-bottom: 20px;
 }
 
+.post-author {
+    font-size: 14px;
+    color: #F2E8C6;
+    margin-top: 8px;
+    margin-right: 500px;
+
+}
 
 .post-header {
     display: flex;
@@ -153,6 +160,7 @@ footer {
     align-items: center;
     padding: 15px;
     text-decoration-color: #F2E8C6;
+    
 }
 
 .post-header span {
