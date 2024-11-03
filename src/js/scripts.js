@@ -12,7 +12,7 @@
 /*/
 async function loadPostsFromJson() {
     try {
-        const response = await fetch('posts.json');
+        const response = await fetch('data/posts.json');
         const posts = await response.json();
         displayPosts(posts);
     } catch (error) {
