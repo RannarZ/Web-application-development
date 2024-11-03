@@ -102,25 +102,51 @@ function saveEmailAndUsername(event) {
 }
 
 function dropDownMenu() {
+    //Fetching username and email and the List node from html
+    //Not the best practice to create the div element in HTML but it is a lot easier. Less writing
     const username = sessionStorage.username;
     const email = sessionStorage.email;
-    const emailList = document.getElementById("listEmail");
-    const nameList = document.getElementById("listName");
-    emailList.innerText = email;
-    nameList.innerText = username;
-
     const listNode = document.getElementById("dropDownList");
-    listNode.style.display = "block";
-}
+    if (username == undefined) {
+        //In case user is not logged in then only displaying login option
+        const login = document.createElement('li');
+        login.id = "logout";
+        const link = document.createElement('a');
+        link.href = "login.html";
+        link.textContent = "Login";
 
-window.addEventListener("click", function(event) {
-    const dropdownList = document.getElementById("dropDownList");
-    const dropdownButton = document.querySelector("#user-picture");
+        login.appendChild(link);
+        listNode.appendChild(login);
+    } else {
+        //Creating the required nodes
+        const nameText = document.createElement('li');
+        const emailText = document.createElement('li');
+        const logout = document.createElement('li');
 
-    if (event.target !== dropdownButton && !dropdownList.contains(event.target)) {
-        dropdownList.style.display = "none";
+        //Inserting text and links to nodes
+        emailText.innerText = email;
+        nameText.innerText = username;
+        const link = document.createElement('a');
+        link.href = "login.html";
+        link.textContent = "Logout";
+
+        //Appending all children to respective nodes
+        logout.appendChild(link);
+        listNode.appendChild(nameText);
+        listNode.appendChild(emailText);
+        listNode.appendChild(logout);
+
     }
-});
+    if (listNode.style.display == "block") {
+        listNode.style.display = "none";
+        //Removing all children
+        while (listNode.firstChild) {
+            listNode.removeChild(listNode.firstChild);
+        }
+    } else {
+        listNode.style.display = "block";
+    }
+}
 
 
 // Initialize function to load posts on DOM content loaded
