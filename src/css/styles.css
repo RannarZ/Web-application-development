@@ -1,7 +1,7 @@
 :root {
     --primary-color: #333;
-    --secondary-color: #f5f7fa;
-    --text-color: #333;
+    --secondary-color: #F2E8C6;
+    --text-color: #F2E8C6;
     --light-text-color: #777;
 }
 
@@ -82,7 +82,7 @@ body {
 }
 
 header {
-    background-color: #ddd;
+    background-color: #800000;
     padding: 15px;
     display: flex;
     justify-content: space-between;
@@ -99,7 +99,7 @@ header img {
 
 .nav-link {
     text-decoration: none;
-    color: black;
+    color: #F2E8C6;
     margin-right: 10px;
     font-size: 30px;
 }
@@ -110,11 +110,12 @@ header nav a + a::before {
 }
 
 header nav a:hover {
-    background-color: #007bff;
+    background-color: #982B1C;
+    border-radius: 5%;
 }
 
 footer {
-    background-color: #ddd;
+    background-color: #800000;
     padding: 15px;
     text-align: center;
 }
@@ -140,17 +141,25 @@ footer {
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 10px;
-    background-color: #f9f9f9;
+    background-color: #982B1C;
     min-height: 200px;
     margin-bottom: 20px;
 }
+
 
 .post-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px;
+    text-decoration-color: #F2E8C6;
 }
+
+.post-header span {
+    color: #F2E8C6;
+}
+
+
 
 .post-header img {
     width: 50px;
@@ -160,7 +169,7 @@ footer {
 }
 
 .post p {
-    color: #333;
+    color: #F2E8C6;
     font-size: 22px;
 }
 
@@ -181,7 +190,7 @@ footer {
     width: 100%;
     max-width: 400px;
     padding: 20px;
-    background-color: #e0e0e0;
+    background-color: #982B1C;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
@@ -191,7 +200,7 @@ footer {
 #login-page-container h2 {
     font-weight: bold;
     font-size: 24px;
-    color: #333;
+    color: #F2E8C6;
     margin-bottom: 20px;
 }
 
@@ -222,13 +231,13 @@ footer {
     font-size: 16px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    background-color: #fff;
+    background-color: #F2E8C6;
 }
 
 #login-page-container button[type="submit"] {
     padding: 10px;
-    background-color: #003366;
-    color: #fff;
+    background-color: #F2E8C6;
+    color: black;
     font-size: 16px;
     border: none;
     border-radius: 5px;
@@ -237,13 +246,13 @@ footer {
 }
 
 #login-page-container button[type="submit"]:hover {
-    background-color: #002244;
+    background-color: #DAD4B5;
 }
 
 #login-page-container .forgot-password,
 #login-page-container .signup-link {
     font-size: 14px;
-    color: #666;
+    color: #F2E8C6;
 }
 
 #login-page-container .forgot-password a {
@@ -265,9 +274,9 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #f9f9f9;
+    background-color: #982B1C;
     border: 1px solid #ccc;
-    gap: 10px;
+    gap: 20px;
     padding: 15px;
     border-radius: 10px;
     min-height: 300px;
@@ -277,12 +286,13 @@ footer {
 
 #create-post {
     width: 50%;
-    background-color: darkblue;
-    color: white;
+    background-color: #F2E8C6;
+    color: black;
 }
 
 #post-insertion {
     height: 100px;
+    background-color: #F2E8C6;
 }
 
 /* Responsive Media Queries */
@@ -344,13 +354,24 @@ footer {
 
 .show {display:block;}
 
+#user-picture {
+    cursor: pointer;
+}
+
 #dropDownList {
     display: none;
-    background-color: #999;
-    float: right;
+    background-color: #982B1C;
+    position: absolute;
+    right: 0;
+    z-index: 100;
+    border-radius: 10%;
+    padding: 1%;
+    font-size: medium;
+    
     
 }
 
 #dropDownList li {
     list-style-type: none;
+    padding: 1%;
 }

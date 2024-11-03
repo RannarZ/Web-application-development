@@ -13,7 +13,14 @@
         <nav>
             <a href="index.html" class="nav-link">Home</a>
         </nav>
-        <img src="logo.jpg" alt="Profile" id="user_picture">
+        <div>
+            <img src="logo.jpg" alt="Profile" id="user-picture" onclick="dropDownMenu();">
+            <div id="dropDownList">
+                <li id="listName">name</li>
+                <li id="listEmail">email</li>
+                <a href="login.html" id="logout">Logout</a>
+            </div>
+        </div>
     </header>
 
     <div id="form-container">
@@ -30,6 +37,8 @@
     </form>
 </div>
 
+<!-- Link to JavaScript file -->
+<script src="src/js/scripts.js"></script>
 </body>
 
 </html>

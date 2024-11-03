@@ -88,12 +88,18 @@ function saveEmailAndUsername(event) {
     event.preventDefault();
     const email = document.getElementById("email").value;
     const usernameList = email.split("@")[0].split(".");
+
+    //Capitalizing the names
+    usernameList[0] = usernameList[0][0].toUpperCase() + usernameList[0].slice(1)
+    usernameList[1] = usernameList[1][0].toUpperCase() + usernameList[1].slice(1)
+
     const username = usernameList[0] + " " + usernameList[1];
+
+
     sessionStorage.email = email;
     sessionStorage.username = username;
     window.location.href = "index.html";
 }
-
 
 function dropDownMenu() {
     const username = sessionStorage.username;
